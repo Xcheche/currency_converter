@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      form {
+        background: #f4f4f4;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Currency Converter</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" step="0.01" required />
+
+      <label for="from_currency">From Currency:</label>
+      <select id="from_currency" name="from_currency" required>
+        <option value="USD">US Dollar</option>
+        <option value="EUR">Euro</option>
+        <option value="GBP">British Pound</option>
+        <option value="JPY">Japanese Yen</option>
+        <option value="NGN">Nigerian Naira</option>
+      </select>
+
+      <label for="to_currency">To Currency:</label>
+      <select id="to_currency" name="to_currency" required>
+        <option value="USD">US Dollar</option>
+        <option value="EUR">Euro</option>
+        <option value="GBP">British Pound</option>
+        <option value="JPY">Japanese Yen</option>
+        <option value="NGN">Nigerian Naira</option>
+      </select>
+
+      <button type="submit">Convert</button>
+    </form>
+  </body>
+</html>

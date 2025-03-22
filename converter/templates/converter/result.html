@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .result {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .amount {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversion Result</h1>
+    <div class="result">
+        <p>
+            {{ amount }} {{ from_currency }} is equal to
+        </p>
+        <p class="amount">
+            {{ converted_amount }} {{ to_currency }}
+        </p>
+    </div>
+    <a href="{% url 'convert' %}" class="back-link">Convert another amount</a>
+</body>
+</html>
